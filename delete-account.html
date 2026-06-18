@@ -436,7 +436,7 @@
 
     <!-- Meta bar -->
     <div class="meta-bar">
-      <span>📅 Last updated: April 2026</span>
+      <span>📅 Last updated: June 2026</span>
       <span>📱 Platform: Android</span>
       <span>🌐 Package: com.moneymerge</span>
     </div>
@@ -453,20 +453,47 @@
       </div>
     </div>
 
+    <!-- In-app deletion (fastest) -->
+    <div class="section">
+      <div class="section-title">
+        <div class="section-icon" style="background:#1a2a1a;">⚡</div>
+        Fastest Way: Delete In the App
+      </div>
+      <p>You can delete your data yourself, instantly, from inside Money Merge — no email required:</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <strong>Open Money Merge and tap Profile</strong>
+            <p>The 👤 Profile button is in the bottom navigation bar on the home screen.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <strong>Scroll to "Data &amp; Privacy" and tap "Delete My Data"</strong>
+            <p>Confirm the prompt. This removes your on-device progress and, if you signed in with Google, deletes your cloud backup and account from our servers.</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-box">
+        <strong>💡 No account needed:</strong> the in-app option works whether you played as a guest or signed in with Google. If you can still open the app, this is the quickest way. If you can't, use the email request below.
+      </div>
+    </div>
+
     <!-- What we store -->
     <div class="section">
       <div class="section-title">
         <div class="section-icon" style="background:#1a1a2a;">🗂️</div>
         What Data We Hold
       </div>
-      <p>When you use Money Merge — especially with Google Sign-in — the following data may be stored on our servers:</p>
+      <p>Money Merge does <strong>not</strong> create an account or store anything on our servers automatically. An identifier exists only after you choose one of two options in the app:</p>
       <ul>
-        <li><strong>Firebase Anonymous User ID</strong> — a random identifier assigned automatically. Not linked to your name or email.</li>
-        <li><strong>Google Display Name</strong> — only if you chose to sign in with Google (e.g. "Rohit"). Shown on your Profile screen.</li>
-        <li><strong>Game Progress</strong> — your gems balance, best score, highest tile reached, and current board state synced to Firebase Firestore.</li>
+        <li><strong>Continue as Guest</strong> — your game progress (gems, best score, highest tile, board) stays <strong>only on your device</strong>. We do not store guest game data on our servers.</li>
+        <li><strong>Sign in with Google</strong> — your Google <strong>display name and email</strong> are held by Firebase Authentication, and your game progress is backed up to Firebase Firestore so it can sync across devices.</li>
       </ul>
       <div class="highlight-box">
-        <strong>✅ We never store:</strong> payment details, phone numbers, location, contacts, email addresses, or any sensitive personal information. All purchases are handled entirely by Google Play.
+        <strong>✅ We never store:</strong> payment details, phone numbers, location, contacts, or any other sensitive personal information. All purchases are handled entirely by Google Play.
       </div>
     </div>
 
@@ -474,9 +501,9 @@
     <div class="section">
       <div class="section-title">
         <div class="section-icon" style="background:#1a2a1a;">📧</div>
-        How to Request Deletion
+        How to Request Deletion by Email
       </div>
-      <p>Send us a deletion request by email. Follow the three steps below and we will process it within <strong>7 days</strong>.</p>
+      <p>If you can't access the app (for example, you've already uninstalled it), send us a deletion request by email instead. Follow the three steps below and we will process it within <strong>7 days</strong>.</p>
 
       <div class="steps">
         <div class="step">
@@ -498,8 +525,8 @@
         <div class="step">
           <div class="step-num">3</div>
           <div class="step-body">
-            <strong>Include your Google account email</strong>
-            <p>So we can locate and permanently delete your Firestore data. If you used anonymous sign-in only, simply mention that in the email.</p>
+            <strong>Include the Google account email you signed in with</strong>
+            <p>So we can locate and permanently delete your Firestore data and account. If you only ever played as a guest, there's nothing stored on our servers — your data lives solely on your device, so just clear local data (see below) or use the in-app option.</p>
           </div>
         </div>
       </div>
@@ -524,28 +551,22 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>Firebase User ID</strong></td>
+            <td><strong>Google account</strong> (name, email, user ID)</td>
             <td>Firebase Auth</td>
             <td><span class="tag tag-deleted">Deleted</span></td>
-            <td>Within 7 days</td>
+            <td>Instantly in-app, or within 7 days by email</td>
           </tr>
           <tr>
             <td><strong>Game Progress</strong> (score, gems, board)</td>
             <td>Firebase Firestore</td>
             <td><span class="tag tag-deleted">Deleted</span></td>
-            <td>Within 7 days</td>
+            <td>Instantly in-app, or within 7 days by email</td>
           </tr>
           <tr>
-            <td><strong>Google Display Name</strong></td>
-            <td>Firebase Firestore</td>
-            <td><span class="tag tag-deleted">Deleted</span></td>
-            <td>Within 7 days</td>
-          </tr>
-          <tr>
-            <td><strong>Local device data</strong> (gems, settings)</td>
+            <td><strong>Local device data</strong> (gems, progress)</td>
             <td>Your Android device</td>
-            <td><span class="tag tag-device">Clear manually</span></td>
-            <td>Instantly (see below)</td>
+            <td><span class="tag tag-device">Deleted in-app</span></td>
+            <td>Instantly (or Clear Data — see below)</td>
           </tr>
           <tr>
             <td><strong>Purchase history</strong> (gem packs, Remove Ads)</td>
@@ -567,7 +588,7 @@
         <div class="section-icon" style="background:#1a1a0a;">📱</div>
         Clearing Local Device Data
       </div>
-      <p>Your gems, game board, and settings are also stored <strong>locally on your device</strong> (not just in the cloud). To remove this data:</p>
+      <p>Your gems, game board, and progress are also stored <strong>locally on your device</strong>. The in-app <strong>"Delete My Data"</strong> option (above) already clears this for you. To remove it manually instead:</p>
       <ul>
         <li>Go to your Android <strong>Settings</strong></li>
         <li>Tap <strong>Apps</strong> (or Application Manager)</li>
